@@ -124,6 +124,8 @@ Sample results for single(pair) input
 
 Real-time portrait video in android application
 
+<video src="videos/cover.mp4" poster="results/input.png" width="320" height="200" controls preload></video>
+
 <p align="left">
   <img  src="android_portrait.gif">
 </p>
