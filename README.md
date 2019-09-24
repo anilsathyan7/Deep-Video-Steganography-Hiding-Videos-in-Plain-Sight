@@ -108,7 +108,7 @@ Since we are using a **pretrained mobilentv2** as encoder for a head start, the 
 
 ### Image Results
 
-Sample results for single(pair) input
+Sample results for a pair of input images - Secret & Cover
 
 **Input**
 
@@ -123,6 +123,8 @@ Sample results for single(pair) input
 ### Video Results
 
 **Input videos**: Secret and Cover
+
+Sample results for a pair of input videos - Secret & Cover
 
 <p align="left">
   <img  src="videos/secret_input.gif"  width="224" height="224">
