@@ -110,16 +110,22 @@ Since we are using a **pretrained mobilentv2** as encoder for a head start, the 
 
 ## Demo
 
-### Result
+### Image Results
 
-Here the **inputs and outputs** are images of size **128x128**.
-The **first row** represents the **input** and the **second row** shows the corresponding **cropped image** obtained by cropping the input image with the **mask output** of the model.
+Sample results for single(pair) input
 
-![Screenshot](result.png)
+**Input**
 
-**Accuracy: 96%**
+![Screenshot](results/input.png)
 
-### Android Application
+**Output**
+
+![Screenshot](results/outut.png)
+
+**Trian MSE: 0.03**
+**Test MSE: 0.02**
+
+### Video Results
 
 Real-time portrait video in android application
 
