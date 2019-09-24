@@ -125,13 +125,13 @@ Sample results for single(pair) input
 Real-time portrait video in android application
 
 <p align="left">
-  <img  src="videos/secret_input.gif">
-  <img  src="videos/cover_input.gif">
+  <img  src="videos/secret_input.gif"  width="224" height="224">
+  <img  src="videos/cover_input.gif" width="224" height="224">
 </p>
 <br>
 <p align="left">
-  <img  src="videos/secret_outvid.gif">
-  <img  src="videos/cover_outvid.gif">
+  <img  src="videos/secret_outvid.gif" width="224" height="224">
+  <img  src="videos/cover_outvid.gif" width="224" height="224">
 </p>
 
 (Shot on OnePlus 3 😉)
