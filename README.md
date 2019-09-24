@@ -52,7 +52,7 @@ Here is the basic **architecture** diagram
 
 ## Implementation
 
-We train the hiding and reveal networks **simultaneously** in the form of an autoencoder, using keras.The model has two inputs corresponding to a pair of secret and cover image.It outputs a secret image and a cover image as output.Since we are using a **autoencoder** based architecture, the labels are same as their corresponding inputs.
+We train the hiding and reveal networks **simultaneously** in the form of an autoencoder, using keras.The model has two inputs corresponding to a pair of secret and cover image and two outputs corresponding to their inputs .Since we are using a **autoencoder** based architecture, the **labels** are same as their corresponding inputs.
 
 The network consists of **three parts** viz. Perpare block, Hide block, Reveal block.In **prepare block**, we  transform the color-based pixels to more useful features for succinctly encoding the images. We then hide this transformed image inside the input cover image using the  **hide block**, to generate the container image.Finally, in the **reveal block** we decode the container image to produce the secret output.Therefore, the training graph has **two inputs and two outputs**.
 
