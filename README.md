@@ -122,13 +122,14 @@ Sample results for single(pair) input
 
 ### Video Results
 
-Real-time portrait video in android application
+**Input videos**: Secret and Cover
 
 <p align="left">
   <img  src="videos/secret_input.gif"  width="224" height="224">
   <img  src="videos/cover_input.gif" width="224" height="224">
 </p>
 <br>
+**Output videos**: Secret and Cover
 <p align="left">
   <img  src="videos/secret_outvid.gif" width="224" height="224">
   <img  src="videos/cover_outvid.gif" width="224" height="224">
