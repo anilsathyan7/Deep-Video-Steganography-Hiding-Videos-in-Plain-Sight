@@ -1,11 +1,12 @@
 # Deep Video Steganography: Hiding Videos in Plain Sight
 
-**Real-time Automatic Deep Matting For Mobile Devices With Mobile-Unet**
+**Hiding videos within other videos using convolutional neural networks**
 
-**Portrait segmentation** refers to the process of segmenting a person in an image from its background.
-Here we use the concept of **semantic segmentation** to predict the label of every pixel (dense prediction) in an image.
+**Steganography** is the practice of **concealing a secret message** within another, ordinary, message.The messages can be images, text, video, audio etc. In modern steganography, the goal is to **covertly communicate** a digital message.
+The main aim of steganogrpahy is to prevent the detection of a hidden message. It is often combined with **cryptography** to improve the security of the hidden message.**Steganalysis** is the study of detecting messages hidden using steganography (breaking); this is analogous to cryptanalysis applied to cryptography.Steganography is used in **applications** like confidential communication, secret data storing, digital watermarking etc.
 
-Here we limit ourselves to **binary classes** (person or background) and use only plain **portrait-selfie** images for matting.
+Steganography on images can be broadly  classified  as  **spatial  domain**  steganography  and **frequency  domain** steganography.In spatial domain, algorithms directly  manipulate the values (**least significant bits**) of some selected pixels.
+In frequency domain, we change some **mid-frequency components** in the frequency domain.These heuristics are effective in the domains for which they are designed, but they are fundamentally **static** and therefore **easily detected**.
 
 ## Dependencies
 
