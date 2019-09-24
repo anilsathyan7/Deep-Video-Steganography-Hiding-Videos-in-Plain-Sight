@@ -32,19 +32,21 @@ The implementaion will be done using **keras**, with tensorflow backend.Also, we
 
 ## Model Architecture
 
-The current work[1] attempts to to place a full size (N*N RGB) color image within another image
-of the same size. Deep neural networks are simultaneously trained to create the hiding and
-revealing processes and are designed to specifically work as a pair. The technique used is image
-compression through auto-encoding networks.The trained system must learn to compress the
-information from the secret image into the least noticeable portions of the cover image and then, it
-must learn how to extract and reconstruct the same information from the encoded message, with
-minimum loss.
+Our main goal is to **hide a full size (N*N RGB) color image** within another image
+of the same size. Deep neural networks are simultaneously trained to create the **hiding and
+revealing processes** and are designed to specifically work as a pair. The technique used is **image
+compression through auto-encoding networks**.The trained system must learn to compress the
+information from the secret image into the **least noticeable portions** of the cover image and then, it
+must learn how to **extract and reconstruct** the same information from the encoded message, with
+**minimum loss**.
 
+Here is the basic **architecture** diagram
 
-
-Here is the **snapshot** of the **upsampled** version of model.
-
-![Screenshot](portrait_seg_small.png)
+<p align="center">
+  <img  src="steg_arch.png">
+  <br>
+  Basic Architecture
+</p>
 
 
 ## How to run
