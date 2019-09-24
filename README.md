@@ -62,6 +62,9 @@ The network consists of **three parts** viz. Perpare block, Hide block, Reveal b
 
 We use a **weighted L2 loss** function along with **Adam optimizer** for training the model.The model is trained for **100 epochs** suing a batch size of 8.
 
+*Loss - L(c, c 0 , s, s 0 ) = ||c − c 0 || + β||s − s 0 ||*
+Here c and s are the cover and secret images respectively, and β is how to weigh their reconstruction errors
+
 To ensure that the networks do not simply encode the secret image in the **LSBs**, a small amount of **noise** is added to the output of the second network (e.g. into the generated container image) during training.
 
 After the training, we split the trained model into two: **hide network and reveal network** (we remove noise layer).The **hide network** has two inputs corresponding to **secret and cover image** and one output corresponding to the **container image**. The reveal  network takes the **container image** as input and reveals(decodes) the **secret image** as output.
