@@ -129,6 +129,7 @@ Sample results for single(pair) input
   <img  src="videos/cover_input.gif" width="224" height="224">
 </p>
 <br>
+
 **Output videos**: Secret and Cover
 <p align="left">
   <img  src="videos/secret_outvid.gif" width="224" height="224">
