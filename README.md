@@ -56,6 +56,10 @@ We train the hiding and reveal networks **simultaneously** in the form of an aut
 
 The network consists of **three parts** viz. Perpare block, Hide block, Reveal block.In **prepare block**, we  transform the color-based pixels to more useful features for succinctly encoding the images. We then hide this transformed image inside the input cover image using the  **hide block**, to generate the container image.Finally, in the **reveal block** we decode the container image to produce the secret output.Therefore, the **training graph** has two inputs and two outputs.
 
+**Training Graph**
+
+![Screenshot](train_graph.png)
+
 We use a **weighted L2 loss** function along with **Adam optimizer** for training the model.The model is trained for **100 epochs** suing a batch size of 8.
 
 To ensure that the networks do not simply encode the secret image in the **LSBs**, a small amount of **noise** is added to the output of the second network (e.g. into the generated container image) during training.
