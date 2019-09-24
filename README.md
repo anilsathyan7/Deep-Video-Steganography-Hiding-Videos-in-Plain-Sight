@@ -119,6 +119,7 @@ Sample results for single(pair) input
 ![Screenshot](results/output.png)
 
 **Trian MSE: 0.03**
+
 **Test MSE: 0.02**
 
 ### Video Results
