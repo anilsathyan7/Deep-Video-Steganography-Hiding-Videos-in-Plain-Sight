@@ -1,5 +1,7 @@
 # Deep Video Steganography: Hiding Videos in Plain Sight
 
+A cnovolutional neural network for hiding videos inside other videos.It is implemented in keras/tensorflow using the concepts of deep learning, steganography and encryption.
+
 ## Background
 
 **Steganography** is the practice of **concealing a secret message** within another, ordinary, message.The messages can be images, text, video, audio etc. In modern steganography, the goal is to **covertly communicate** a digital message.
@@ -48,6 +50,7 @@ Here is the basic **architecture** diagram
   Basic Architecture
 </p>
 
+## Implementation
 
 ## How to run
 
