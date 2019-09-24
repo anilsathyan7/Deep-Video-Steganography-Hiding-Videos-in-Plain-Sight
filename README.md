@@ -7,6 +7,7 @@ The main aim of steganogrpahy is to prevent the detection of a hidden message. I
 
 <p align="center">
   <img  src="https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-981-10-6872-0_26/MediaObjects/393723_1_En_26_Fig2_HTML.gif">
+  <br>
   Basic Working Model
 </p>
 
