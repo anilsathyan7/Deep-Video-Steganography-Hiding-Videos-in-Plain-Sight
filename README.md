@@ -124,10 +124,14 @@ Sample results for single(pair) input
 
 Real-time portrait video in android application
 
-<video src="videos/cover.mp4" poster="results/input.png" width="320" height="200" controls preload></video>
-
 <p align="left">
-  <img  src="android_portrait.gif">
+  <img  src="videos/secret_input.gif">
+  <img  src="videos/cover_input.gif">
+</p>
+<br>
+<p align="left">
+  <img  src="videos/secret_outvid.gif">
+  <img  src="videos/cover_outvid.gif">
 </p>
 
 (Shot on OnePlus 3 😉)
