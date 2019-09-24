@@ -110,11 +110,11 @@ Since we are using a **pretrained mobilentv2** as encoder for a head start, the 
 
 Sample results for a pair of input images - Secret & Cover
 
-**Input**
+**Inputs**: Secret and Cover
 
 ![Screenshot](results/input.png)
 
-**Output**
+**Outputs**: Secret and Cover
 
 ![Screenshot](results/output.png)
 
@@ -122,9 +122,9 @@ Sample results for a pair of input images - Secret & Cover
 
 ### Video Results
 
-**Input videos**: Secret and Cover
-
 Sample results for a pair of input videos - Secret & Cover
+
+**Inputs**: Secret and Cover
 
 <p align="left">
   <img  src="videos/secret_input.gif"  width="224" height="224">
@@ -132,7 +132,7 @@ Sample results for a pair of input videos - Secret & Cover
 </p>
 <br>
 
-**Output videos**: Secret and Cover
+**Outputs**: Secret and Cover
 <p align="left">
   <img  src="videos/secret_outvid.gif" width="224" height="224">
   <img  src="videos/cover_outvid.gif" width="224" height="224">
