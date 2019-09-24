@@ -136,8 +136,6 @@ Sample results for single(pair) input
   <img  src="videos/cover_outvid.gif" width="224" height="224">
 </p>
 
-(Shot on OnePlus 3 😉)
-
 ## Key Insights and Drawbacks
 
 1. Always start experimentation with **standard/pretrained** networks. Also try out **default/standard hyperparameter** settings before experimentation.
