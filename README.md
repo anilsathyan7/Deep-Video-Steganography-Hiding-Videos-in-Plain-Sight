@@ -62,6 +62,14 @@ To ensure that the networks do not simply encode the secret image in the **LSBs*
 
 After the training, we split the trained model into two: **hide network and reveal network** (we remove noise layer).The **hide network** has two inputs corresponding to **secret and cover image** and one output corresponding to the **container image**. The reveal  network takes the **container image** as input and reveals(decodes) the **secret image** as output.
 
+**Hide Network**
+
+![Screenshot](models/hide.png)
+
+**Reveal Network**
+
+![Screenshot](models/reveal.png)
+
 The hide network is used by the **sender**; while the reveal network is supposed to be used by the **receiver**.The receiver has access only to the container image.In additon to the normal steganographic hiding mechanism, we also **encrypyt(block shuffle)** our secret imagess for added security.Therefore , both the **sender and the receiver** shares a **symmetric key** for encrypting/decrypting the shuffled secret message. The encryption is performed by the sender on the **input secret image**; whereas the decryption is performed by the receiver on the **final decode image**.
 
 ## How to run
