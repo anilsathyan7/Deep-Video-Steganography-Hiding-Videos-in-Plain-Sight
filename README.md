@@ -1,7 +1,5 @@
 # Deep Video Steganography: Hiding Videos in Plain Sight
 
-**Hiding videos within other videos using convolutional neural networks**
-
 ## Background
 
 **Steganography** is the practice of **concealing a secret message** within another, ordinary, message.The messages can be images, text, video, audio etc. In modern steganography, the goal is to **covertly communicate** a digital message.
@@ -16,7 +14,7 @@ The main aim of steganogrpahy is to prevent the detection of a hidden message. I
 Steganography on images can be broadly  classified  as  **spatial  domain**  steganography  and **frequency  domain** steganography.In spatial domain, algorithms directly  manipulate the values (**least significant bits**) of some selected pixels.
 In frequency domain, we change some **mid-frequency components** in the frequency domain.These heuristics are effective in the domains for which they are designed, but they are fundamentally **static** and therefore **easily detected**.We can evaluate a steganographic technique or algorithm by using **performance and qualtiy metrics** like capacity, secrecy, robustness, imperceptibility, speed, applicabilty etc.
 
-Here we plan to extend the basic implementation from the paper 'Hiding images in plain sight: Deep steganography' to videos.Also, we will incorporate additional **block-shuffling** for encrypting the secret information, along with other **image enhancemnet** techniques.The implementaion will be done using **keras**, with tensorflow backend.Also, we will be using randomly selected images(50,000) from **imagenet** dataset for training the model.
+Here we plan to extend the basic implementation from the paper 'Hiding images in plain sight: Deep steganography' to videos, i.e we will train a model for hiding videos within other videos using convolutional neural networks.Also, we will incorporate additional **block-shuffling** as an encryption method for **added security** and other **image enhancemnet** techniques for **improving the output quality**.The implementaion will be done using **keras**, with tensorflow backend.Also, we will be using random images from **imagenet**(50,000) dataset for training the model.
 
 ## Dependencies
 
