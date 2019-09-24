@@ -14,7 +14,9 @@ The main aim of steganogrpahy is to prevent the detection of a hidden message. I
 Steganography on images can be broadly  classified  as  **spatial  domain**  steganography  and **frequency  domain** steganography.In spatial domain, algorithms directly  manipulate the values (**least significant bits**) of some selected pixels.
 In frequency domain, we change some **mid-frequency components** in the frequency domain.These heuristics are effective in the domains for which they are designed, but they are fundamentally **static** and therefore **easily detected**.We can evaluate a steganographic technique or algorithm by using **performance and qualtiy metrics** like capacity, secrecy, robustness, imperceptibility, speed, applicabilty etc.
 
-Here we plan to extend the basic implementation from the paper 'Hiding images in plain sight: Deep steganography' to videos, i.e we will train a model for hiding videos within other videos using convolutional neural networks.Also, we will incorporate additional **block-shuffling** as an encryption method for **added security** and other **image enhancemnet** techniques for **improving the output quality**.The implementaion will be done using **keras**, with tensorflow backend.Also, we will be using random images from **imagenet**(50,000) dataset for training the model.
+Here we plan to extend the basic implementation from the paper 'Hiding images in plain sight: Deep steganography' to videos, i.e we will train a model for hiding videos within other videos using convolutional neural networks.Also, we will incorporate additional **block-shuffling** as an encryption method for **added security** and other **image enhancemnet** techniques for **improving the output quality**.
+
+The implementaion will be done using **keras**, with tensorflow backend.Also, we will be using random images from **imagenet**dataset for training the model.We will use **50000 images** (RGB-224x224) for taining and **7498 images** for validation.
 
 ## Dependencies
 
@@ -27,21 +29,18 @@ Here we plan to extend the basic implementation from the paper 'Hiding images in
 * Download training [data-set](https://drive.google.com/file/d/1UBLzvcqvt_fin9Y-48I_-lWQYfYpt_6J/view?usp=sharing)
 * GPU with CUDA support
 
-## Dataset
-
-The dataset consists of **18698 human portrait images of size 128x128 in RGB format**, along with their **masks(ALPHA)**. Here we augment the [**PFCN**](https://1drv.ms/u/s!ApwdOxIIFBH19Ts5EuFd9gVJrKTo) dataset with (handpicked) portrait  images form **supervisely** dataset. Additionaly, we download **random selfie** images from web and generate their masks using state-of-the-art **deeplab-xception** model for semantic segmentation. 
-
-Now to increase the size of dataset, we perform augmentation like **cropping, brightness alteration and flipping**. Since most of our images contain plain background, we create new **synthetic images** using random backgrounds (natural) using the default dataset, with the help of a **python script**.
-
-Besides the aforesaid augmentation techniques, we **normalize(also standardize)** the images and perform **run-time augmentations like flip, shift and zoom** using keras data generator and preprocessing module.
 
 ## Model Architecture
 
-Here we use **Mobilent v2** with **depth multiplier 0.5** as encoder (feature extractor).
+The current work[1] attempts to to place a full size (N*N RGB) color image within another image
+of the same size. Deep neural networks are simultaneously trained to create the hiding and
+revealing processes and are designed to specifically work as a pair. The technique used is image
+compression through auto-encoding networks.The trained system must learn to compress the
+information from the secret image into the least noticeable portions of the cover image and then, it
+must learn how to extract and reconstruct the same information from the encoded message, with
+minimum loss.
 
-For the **decoder part**, we have two variants. You can use a upsampling block with either  **Transpose Convolution** or **Upsample2D+Convolution**. In the former case we use a **stride of 2**, whereas in the later we use **resize bilinear** for upsampling, along with Conv2d. Ensure proper **skip connections** between encoder and decoder parts for better results.
 
-Additionaly, we use **dropout** regularization to prevent **overfitting**.It also helps our network to learn more **robust** features during training.
 
 Here is the **snapshot** of the **upsampled** version of model.
 
