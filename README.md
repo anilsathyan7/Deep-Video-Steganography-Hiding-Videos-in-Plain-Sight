@@ -81,6 +81,8 @@ After the training, we split the trained model into two: **hide network and reve
 
 The hide network is used by the **sender**; while the reveal network is supposed to be used by the **receiver**.The receiver has access only to the container image.In additon to the normal steganographic hiding mechanism, we also **encrypyt(block shuffle)** our secret imagess for added security.Therefore , both the **sender and the receiver** shares a **symmetric key** for encrypting/decrypting the shuffled secret message. The encryption is performed by the sender on the **input secret image**; whereas the decryption is performed by the receiver on the **final decode image**.
 
+Finally images/video are enhanced by applying **Non-local Means Denoising** algorithm and **Unsharp Masking**(USM) filter.
+
 ## How to run
 
 Download the **dataset** from the above link and put them in **data** folder.
