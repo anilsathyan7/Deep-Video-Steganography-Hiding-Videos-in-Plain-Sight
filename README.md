@@ -196,15 +196,13 @@ Version 1.0
 Anil Sathyan
 
 ## Acknowledgments
-* https://www.tensorflow.org/model_optimization
-* https://github.com/cainxx/image-segmenter-ios
-* https://github.com/gallifilo/final-year-project
-* https://github.com/lizhengwei1992/mobile_phone_human_matting
-* https://machinethink.net/blog/mobilenet-v2/
-*   [Deeplab Image Segmentation](https://colab.research.google.com/github/tensorflow/models/blob/master/research/deeplab/deeplab_demo.ipynb)
-*   [Tensorflow - Image segmentation](https://www.tensorflow.org/beta/tutorials/images/segmentation)
-*   [Hyperconnect - Tips for fast portrait segmentation](https://hyperconnect.github.io/2018/07/06/tips-for-building-fast-portrait-segmentation-network-with-tensorflow-lite.html)
-* [Prismal Labs: Real-time Portrait Segmentation on Smartphones](https://blog.prismalabs.ai/real-time-portrait-segmentation-on-smartphones-39c84f1b9e66)
-* [Keras Documentation](https://keras.io/)
-* [Boundary-Aware Network for Fast and High-Accuracy Portrait Segmentation](https://arxiv.org/pdf/1901.03814.pdf)
-* [Fast Deep Matting for Portrait Animation on Mobile Phone](https://arxiv.org/pdf/1707.08289.pdf)
+* [Hiding images in plain sight: Deep steganography](https://papers.nips.cc/paper/6802-hiding-images-in-plain-sight-deep-steganography)
+* https://github.com/harveyslash/Deep-Steganography
+* https://towardsdatascience.com/nips-2017-google-hiding-images-in-plain-sight-deep-steganography-with-interactive-code-e5efecae11ed
+* https://www.pyimagesearch.com/2018/06/04/keras-multiple-outputs-and-multiple-losses/
+* https://machinelearningmastery.com/keras-functional-api-deep-learning/
+* http://theorangeduck.com/page/neural-network-not-working
+* https://gist.github.com/gyglim/1f8dfb1b5c82627ae3efcfbbadb9f514
+* https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_photo/py_non_local_means/py_non_local_means.html
+* https://stackoverflow.com/questions/52800025/keras-give-input-to-intermediate-layer-and-get-final-output
+* https://keras.io/models/model/
