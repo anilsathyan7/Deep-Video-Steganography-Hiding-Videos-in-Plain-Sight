@@ -29,6 +29,7 @@ The implementaion will be done using **keras**, with tensorflow backend.Also, we
 ## Prerequisites
 
 * Download training [data-set](https://github.com/dusty-nv/jetson-inference/blob/master/docs/imagenet-training.md#downloading-image-recognition-dataset)
+* Download evalutation [data-set](https://www.ntu.edu.sg/home/asjfcai/Benchmark_Website/Semantic%20dataset100.zip)
 * GPU with CUDA support
 
 
@@ -85,7 +86,21 @@ Finally images/video are enhanced by applying **Non-local Means Denoising** algo
 
 ## How to run
 
-Download the **dataset** from the above link and put them in **data** folder.
+1. Download the **imagenet dataset** and put them in **data** folder.
+2. Select a **random subset** of images from the  imagenet dataset.
+3. Resize all the images to **224*224(RGB)** size.
+4. Split the dataset into **training and validation** subsets.
+
+### Directory structure:- 
+
+data
+├── train_data
+│   └── train
+└── val_data
+    └── validation
+
+Also ensure the **evalutaion** images(RGB:224x224) are stored in the directory **test/images**.
+
 After ensuring the data files are stored in the **desired directorires**, run the scripts in the **following order**.
 
 ```python
