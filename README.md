@@ -138,7 +138,7 @@ Sample results for a pair of input images - Secret & Cover
 
 ![Screenshot](results/output.png)
 
-*Trian MSE: 0.03*, *Test MSE: 0.02*
+**Trian MSE:** 0.03, **Test MSE:** 0.02
 
 ### Video Results
 
