@@ -91,21 +91,23 @@ Finally images/video are enhanced by applying **Non-local Means Denoising** algo
 3. Resize all the images to **224*224(RGB)** size.
 4. Split the dataset into **training and validation** subsets.
 
+Also ensure the that **evalutaion** images(RGB:224x224) are stored in the directory **dataset/eval_data**.
+
 ### Directory structure:- 
 
-data
+dataset
+├── eval_data
 ├── train_data
 │   └── train
 └── val_data
     └── validation
 
-Also ensure the **evalutaion** images(RGB:224x224) are stored in the directory **test/images**.
 
 After ensuring the data files are stored in the **desired directorires**, run the scripts in the **following order**.
 
 ```python
 1. python train.py # Train the model on training dataset
-2. python eval.py test/images checkpoints/steg_model-06-0.03.hdf5 # Evaluate the model on evaluation dataset
+2. python eval.py dataset/eval_data checkpoints/steg_model-06-0.03.hdf5 # Evaluate the model on evaluation dataset
 3. python test.py test/testdata.npy checkpoints/steg_model-06-0.03.hdf5 # Test the model on test dataset
 4. python split_model.py checkpoints/steg_model-06-0.03.hdf5 # Split the model into hide and reveal networks
 ```
