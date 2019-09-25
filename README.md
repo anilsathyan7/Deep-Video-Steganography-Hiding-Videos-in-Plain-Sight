@@ -179,13 +179,13 @@ Sample results for a pair of input videos - Secret & Cover
 
 ## TODO
 
-* Port the code to **TF 2.0**
-* Use a **bigger image** for training(224x224)
-* Try **quantization-aware** training
-* Train with **mixed precision** (FP16) 
-* Optimize the model by performing weight **pruning**
-* Improve **accuracy** & reduce **artifacts** at runtime
-* Incroporate **depth** information and **boundary refinement** techniques
+* Support for **lossy** image and video formats
+* Use a **bigger images** for training(513x513)
+* Support for hididing **synthetic** images(not natural)
+* Improve the **accuracy** and **quality** of video
+* Make the model resistant to **noise and affine transformations**
+* Try GAN based **adversarial** training, for improving **imperceptibility**
+* Implement **custom** technique for hiding pixels across **multiple frames** using **temporal** information
 
 ## Versioning
 
