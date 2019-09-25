@@ -118,7 +118,8 @@ After ensuring the data files are stored in the **desired directorires**, run th
 
 ## Training graphs
 
-Since we are using a **pretrained mobilentv2** as encoder for a head start, the training **quickly converges to 90% accuracy** within first couple of epochs. Also, here we use a flexible **learning rate schedule** (ReduceLROnPlateau) for training the model.
+It took about **1 week** for training the model on the entire dataset using a **GTX 1060 (6GB)**,with a batch size of 6.
+Use **learning rate decay** and higher **batch size**(better GPU) for **faster** training and/or convergence.
 
 ![Screenshot](losses.png)
 
