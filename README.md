@@ -94,14 +94,14 @@ Finally images/video are enhanced by applying **Non-local Means Denoising** algo
 Also ensure the that **evalutaion** images(RGB:224x224) are stored in the directory **dataset/eval_data**.
 
 ### Directory structure:- 
-
+```
 dataset
 ├── eval_data
 ├── train_data
 │   └── train
 └── val_data
     └── validation
-    
+```    
 Configure the **filepaths and batch-size** in train.py, if needed.
 After ensuring the data files are stored in the **desired directorires**, run the scripts in the **following order**.
 
