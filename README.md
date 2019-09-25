@@ -1,6 +1,6 @@
 # Deep Video Steganography: Hiding Videos in Plain Sight
 
-A cnovolutional neural network for hiding videos inside other videos.It is implemented in keras/tensorflow using the concepts of deep learning, steganography and encryption.
+A convolutional neural network for **hiding videos inside other videos**.It is implemented in **keras/tensorflow** using the concepts of **deep learning, steganography and encryption**.
 
 ## Background
 
@@ -16,7 +16,7 @@ The main aim of steganogrpahy is to prevent the detection of a hidden message. I
 Steganography on images can be broadly  classified  as  **spatial  domain**  steganography  and **frequency  domain** steganography.In spatial domain, algorithms directly  manipulate the values (**least significant bits**) of some selected pixels.
 In frequency domain, we change some **mid-frequency components** in the frequency domain.These heuristics are effective in the domains for which they are designed, but they are fundamentally **static** and therefore **easily detected**.We can evaluate a steganographic technique or algorithm by using **performance and qualtiy metrics** like capacity, secrecy, robustness, imperceptibility, speed, applicabilty etc.
 
-Here we plan to extend the basic implementation from the paper 'Hiding images in plain sight: Deep steganography' to videos, i.e we will train a model for hiding videos within other videos using convolutional neural networks.Also, we will incorporate additional **block-shuffling** as an encryption method for **added security** and other **image enhancemnet** techniques for **improving the output quality**.
+Here we plan to extend the basic implementation from the paper **'Hiding images in plain sight: Deep steganography'** to videos, i.e we will train a model for hiding videos within other videos using convolutional neural networks.Also, we will incorporate additional **block-shuffling** as an encryption method for **added security** and other **image enhancemnet** techniques for **improving the output quality**.
 
 The implementaion will be done using **keras**, with tensorflow backend.Also, we will be using random images from  **imagenet**dataset for training the model.We will use **50000 images** (RGB-224x224) for taining and **7498 images** for validation.
 
@@ -24,7 +24,7 @@ The implementaion will be done using **keras**, with tensorflow backend.Also, we
 
 * Tensorflow(>=1.14.0), Python 3
 * Keras(>=2.2.4)
-* Opencv, PIL, Matplotlib
+* Opencv(>3.0), PIL, Matplotlib
 
 ## Prerequisites
 
