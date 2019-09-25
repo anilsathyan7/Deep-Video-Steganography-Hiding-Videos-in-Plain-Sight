@@ -159,14 +159,16 @@ Sample results for a pair of input videos - Secret & Cover
 
 ## Tips and Tricks
 
-* Since the model has two inputs and two outputs we use a **custom generator** to feed the model with its inputs and labels from a **directory**.In this autoencoder based approach, we feed the (two) input images from same directory with **different seeds**.The **ouput labels**  for the model will be  the corresponding (two)inputs of the model, in each iteration.
+* Since the model has two inputs and two outputs we use a **custom generator** to feed the model with input images and labels from the dataset **directory**.In this autoencoder based approach, we feed the input images(two) to the model from the same directory with **different seed** values.The **ouput labels**  for the model will be  the corresponding (two)input images of the model, in each iteration.
 * To implement the **custom loss function** we need to calculate the hide and reveal loss seperately and add them up using custom **loss weights**. Also, we need to pass these loss functions as **custom objects** for prediction at rutnime.
 * Once the model is trained together, we need to **spilt** them inot **hide and reveal networks**.We can esily the seperate the encoder (initila block)  form the parent model by specifying the required **intermediate layer** as its final output layer.On the other hand, for the **decoder** part we neend to create a **new input layer** and connect  it to the lower layers(with weights). This can be accomplished by **reinitializng** these layers(with same name) and **reloading** the corresponding weights from the parent model.
 * Since the current model support only **lossless formats**, we need to ensure that the output container image is not modified before decoding.Also, make sure you save the container video using an **uncompressed**(lossless) codec/format eg:-Huffman HFYU, Lagarith LAGS etc.
-* To **monitor the training** progress and visualize the images during the training, we need to implement a **custom tensorboard image logger**, since keras does not have a buil-in image logger(or use matplotlib).
+* You can use a permutaion based **block shuffling** technique for **encrypting** your input secret images. Bascially you divide the image into blocks of fixed size and permute them according to a **predefined sequence**(shared secret key) before hiding them using the model. The **receiver** can finally **decode** the secret image from the model(reveal) output using this secret key.
+* To **monitor the training** progress and visualize the images during the training, we need to implement a **custom tensorboard image logger**, since keras does not have a built-in image logger(or use matplotlib).
 * Use **learning rate decay** and higher **batch size**(better GPU) for **faster** training and/or convergence.
 * Maske sure you **don't use a "relu"** activation on the **final layers** corresponding to the model outputs.
-* Don't forget to **denormalize** the final output images for **viewing**, if you have normalized the input images during **training**.
+* Don't forget to **denormalize** the final output images for **viewing**, if you have normalized the input images during **training** process.
+* **Accuracy** has little meaning in case of autoencoder networks, since we ares essentialy performing a **regression** task.We can use **MSE or KL divergenace**(on unseen data) as metrics to evaluate the **performance** of an autoencoder.
 
 
 
