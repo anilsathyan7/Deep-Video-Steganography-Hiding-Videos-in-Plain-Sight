@@ -1,10 +1,11 @@
+import sys
 from keras.models import Model
 from keras.layers import Dense, Input, concatenate, Conv2D
 from keras.models import load_model
 from keras.utils import plot_model
 
 # Load complete model
-model=load_model('checkpoints/steg_model-06-0.03.hdf5',compile=False)
+model=load_model(sys.argv[1], compile=False)
 
 # Print model summary
 model.summary()
@@ -49,8 +50,13 @@ secret_pred = Conv2D(3, kernel_size=1, padding="same", name='revl_conv_f')(rconc
 decoder=Model(new_ip,secret_pred)
 
 # Load weights from the parent model 
-decoder.load_weights('checkpoints/steg_model-06-0.03.hdf5', by_name=True)
+decoder.load_weights(sys.argv[1], by_name=True)
 decoder.save('reveal.h5')
 
 #Save model plot
 plot_model(decoder, to_file='reveal.png')
+
+'''
+Sample run:-
+python split_model.py checkpoints/steg_model-06-0.03.hdf5
+'''
