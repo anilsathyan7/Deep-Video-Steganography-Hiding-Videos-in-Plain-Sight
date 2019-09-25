@@ -179,10 +179,11 @@ Sample results for a pair of input videos - Secret & Cover
 
 ## TODO
 
+* Change **error metric** from MSE to **SSIM**
+* Use **bigger images** for training(513x513)
 * Support for **lossy** image and video formats
-* Use a **bigger images** for training(513x513)
-* Support for hididing **synthetic** images(not natural)
 * Improve the **accuracy** and **quality** of video
+* Support for hididing **synthetic** images(not natural)
 * Make the model resistant to **noise and affine transformations**
 * Try GAN based **adversarial** training, for improving **imperceptibility**
 * Implement **custom** technique for hiding pixels across **multiple frames** using **temporal** information
