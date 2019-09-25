@@ -18,7 +18,7 @@ In frequency domain, we change some **mid-frequency components** in the frequenc
 
 Here we plan to extend the basic implementation from the paper 'Hiding images in plain sight: Deep steganography' to videos, i.e we will train a model for hiding videos within other videos using convolutional neural networks.Also, we will incorporate additional **block-shuffling** as an encryption method for **added security** and other **image enhancemnet** techniques for **improving the output quality**.
 
-The implementaion will be done using **keras**, with tensorflow backend.Also, we will be using random images from **imagenet**dataset for training the model.We will use **50000 images** (RGB-224x224) for taining and **7498 images** for validation.
+The implementaion will be done using **keras**, with tensorflow backend.Also, we will be using random images from  **imagenet**dataset for training the model.We will use **50000 images** (RGB-224x224) for taining and **7498 images** for validation.
 
 ## Dependencies
 
@@ -90,12 +90,13 @@ After ensuring the data files are stored in the **desired directorires**, run th
 
 ```python
 1. python train.py # Train the model on data-set
-2. python eval.py checkpoints/up_super_model-102-0.06.hdf5 # Evaluate the model on test-set
-3. python export.py checkpoints/up_super_model-102-0.06.hdf5 # Export the model for deployment
-4. python test.py test/four.jpeg # Test the model on a single image
-5. python webcam.py test/beach.jpg # Run the model on webcam feed
+2. python eval.py test/images checkpoints/steg_model-06-0.03.hdf5 # Evaluate the model on test-set
+3. python test.py test/testdata.npy checkpoints/steg_model-06-0.03.hdf5 # Test the model on a single image pair
+4. python split_model.py checkpoints/steg_model-06-0.03.hdf5 # Split the model to obtain hide and reveal networks
 ```
-You may also run the **Jupyter Notebook** (ipynb) in google colaboratory, after downloading the training dataset.
+* Use **image_hide.py & image_reveal.py** to test the models on **images**.
+* Use **video_hide.py & video_reveal.py** to test the models on **videos**.
+* Use **enhance.py** for enhancing the **output** secret video.
 
 ## Training graphs
 
