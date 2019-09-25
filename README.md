@@ -119,7 +119,6 @@ After ensuring the data files are stored in the **desired directorires**, run th
 ## Training graphs
 
 It took about **1 week** for training the model on the entire dataset using a **GTX 1060 (6GB)**,with a batch size of 6.
-Use **learning rate decay** and higher **batch size**(better GPU) for **faster** training and/or convergence.
 
 ![Screenshot](losses.png)
 
@@ -158,23 +157,17 @@ Sample results for a pair of input videos - Secret & Cover
   <img  src="videos/cover_outvid.gif" width="224" height="224">
 </p>
 
-## Key Insights and Drawbacks
+## Tips and Tricks
 
-1. Always start experimentation with **standard/pretrained** networks. Also try out **default/standard hyperparameter** settings before experimentation.
-2. Make sure your **ground truth is correct/uncorrupted** and is in **desired format** before training (even standard dataset).
-3. For **mobile devices**, make sure you use a **mobile-friendly architecture (like mobilenet)** for training and deployment.
-4. Using **google colaboratory** along with google drive for training was **EASY & FUN**.It provides **high end GPU** (RAM also) for free.
-5. Some of the mobile **optimization tools**(even TF) are still **experimental** (GPU deegate, NNAPI, FP16 etc.) and are buggy.They support only **limited operations and edge devices**.
-6. Even **state-of-the art segmenation models**(deeplab-xception) seems to suffer from **false positives** (even at higher sizes), when we test them on a random image.
-7. The **segmentaion maps** produced at this low resolution (128x128) have coarse or **sharp edges** (stair-case effect), especially when we resize them to higher resolution.
-8. To tackle the problem of coarse edges, we apply a **blur filter** (also antialiasing at runtime) using **opencv** and perform **alpha blending** with the background image. Other approach was to **threshold** the blurred segmentation map with **smooth-step** function using **GLSL shaders**.
-9. In android we can use **tensorflow-lite gpu-delegate** to speed up the inference.It was found that **flattening** the model output into a **rank 1 (or 2)** tensor helped us to reduce the **latency** due to **GPU-CPU** data transfer.Also this helped us to **post-process** the mask without looping over a multi-dimensional array.
-10. Using **opencv (Android NEON)** for post-processing helped us to improve the **speed** of inference.But this comes at the cost of **additional memory** for opencv libraray in the application.
-11. Still, there is a scope for improving the **latency** of inference by performing all the **postprocessing in the GPU**, without transfering the data to CPU. This can be acheived by using opengl shader storge buffers (**SSBO**). We can configure the GPU delegate to **accept input from SSBO** and also access model **output from GPU memory** for further processing (wihout CPU) and subsequent rendering.
-12. The **difference** between the **input image frame rate and output mask generation frame rate** may lead to an output(rendering), where the segmentation **mask lags behind current frame**.This **stale mask** phenemena arises due to the model(plus post-processing) taking more than 40ms (corr. to 25 fps input) per frame (real-time video). The **solution** is to render then output image in accordance to the **mask generation fps** (depends on device capability) or **reduce the input frame rate**.
-13. If your segmentaion-mask output contains **minor artifacts**, you can clean them up using **morphological operations** like **opening or closing**. However it can be slightly **expensive** if your output image size is **large**, especially if you perform them on every frame output.
-14. If the background consists of **noise, clutter or objects like clothes, bags**  etc. the model **fails** miserably.
-15. Even though the stand-alone **running time** of exported (tflite) model is  **low(around 100 ms)**,other operations like **pre/post-processing, data loading, data-transfer** etc. consumes **significant time** in a mobile device.
+* Since the model has two inputs and two outputs we use a **custom generator** to feed the model with its inputs and labels from a **directory**.In this autoencoder based approach, we feed the (two) input images from same directory with **different seeds**.The **ouput labels**  for the model will be  the corresponding (two)inputs of the model, in each iteration.
+* To implement the **custom loss function** we need to calculate the hide and reveal loss seperately and add them up using custom **loss weights**. Also, we need to pass these loss functions as **custom objects** for prediction at rutnime.
+* Once the model is trained together, we need to **spilt** them inot **hide and reveal networks**.We can esily the seperate the encoder (initila block)  form the parent model by specifying the required **intermediate layer** as its final output layer.On the other hand, for the **decoder** part we neend to create a **new input layer** and connect  it to the lower layers(with weights). This can be accomplished by **reinitializng** these layers(with same name) and **reloading** the corresponding weights from the parent model.
+* Since the current model support only **lossless formats**, we need to ensure that the output container image is not modified before decoding.Also, make sure you save the container video using an **uncompressed**(lossless) codec/format eg:-Huffman HFYU, Lagarith LAGS etc.
+* To **monitor the training** progress and visualize the images during the training, we need to implement a **custom tensorboard image logger**, since keras does not have a buil-in image logger(or use matplotlib).
+* Use **learning rate decay** and higher **batch size**(better GPU) for **faster** training and/or convergence.
+* Maske sure you **don't use a "relu"** activation on the **final layers** corresponding to the model outputs.
+* Don't forget to **denormalize** the final output images for **viewing**, if you have normalized the input images during **training**.
+
 
 
 ## TODO
