@@ -10,7 +10,7 @@ The main aim of steganogrpahy is to prevent the detection of a hidden message. I
 <p align="center">
   <img  src="https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-981-10-6872-0_26/MediaObjects/393723_1_En_26_Fig2_HTML.gif">
   <br>
-  Basic Working Model
+  <b>1. Basic Working Model</b>
 </p>
 
 Steganography on images can be broadly  classified  as  **spatial  domain**  steganography  and **frequency  domain** steganography.In spatial domain, algorithms directly  manipulate the values (**least significant bits**) of some selected pixels.
@@ -48,7 +48,7 @@ Here is the basic **architecture** diagram
 <p align="center">
   <img  src="steg_arch.png">
   <br>
-  Basic Architecture
+  <b>2. Basic Architecture</b>
 </p>
 
 ## Implementation
