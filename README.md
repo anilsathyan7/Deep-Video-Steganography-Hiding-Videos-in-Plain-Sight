@@ -28,7 +28,7 @@ The implementaion will be done using **keras**, with tensorflow backend.Also, we
 
 ## Prerequisites
 
-* Download training [data-set](https://drive.google.com/file/d/1UBLzvcqvt_fin9Y-48I_-lWQYfYpt_6J/view?usp=sharing)
+* Download training [data-set](https://github.com/dusty-nv/jetson-inference/blob/master/docs/imagenet-training.md#downloading-image-recognition-dataset)
 * GPU with CUDA support
 
 
