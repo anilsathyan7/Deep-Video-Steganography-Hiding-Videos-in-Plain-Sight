@@ -101,7 +101,7 @@ dataset
 │   └── train
 └── val_data
     └── validation
-
+    
 Configure the **filepaths and batch-size** in train.py, if needed.
 After ensuring the data files are stored in the **desired directorires**, run the scripts in the **following order**.
 
