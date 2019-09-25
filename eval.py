@@ -121,4 +121,4 @@ ax_in[1].imshow(cover)
 # Perform prediction
 predict(source,cover)
 
-# Sample run: python eval.py test/images checkpoints/steg_model-06-0.03.hdf5
+# Sample run: python eval.py dataset/eval_data checkpoints/steg_model-06-0.03.hdf5
