@@ -20,11 +20,11 @@ from io import StringIO, BytesIO
 # %matplotlib inline
 
 # Configure file paths
-TRAIN="/media/anilsathyan7/work/deepsteg/resized/train_data"
-VALIDATION="/media/anilsathyan7/work/deepsteg/resized/val_data"
+TRAIN="dataset/train_data"
+VALIDATION="dataset/val_data"
 TRAIN_NUM=len(glob.glob(TRAIN+"/*/*"))
 VAL_NUM=len(glob.glob(VALIDATION+"/*/*"))
-TEST_DATA="testdata.npy"
+TEST_DATA="test/testdata.npy"
 
 CHECKPOINT="checkpoints/steg_model-{epoch:02d}-{val_loss:.2f}.hdf5"
 PRETRAINED='checkpoints/steg_model-04-0.03.hdf5'
