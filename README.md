@@ -175,6 +175,7 @@ Sample results for a pair of input videos - Secret & Cover
 ## TODO
 
 * Change **error metric** from MSE to **SSIM**
+* Train the model with **Lab** colour space
 * Use **bigger images** for training(513x513)
 * Support for **lossy** image and video formats
 * Improve the **accuracy** and **quality** of video
