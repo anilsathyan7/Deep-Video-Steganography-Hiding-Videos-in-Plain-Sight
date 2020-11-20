@@ -1,7 +1,8 @@
 import os
 import glob
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf # Ensure TF2 compatability
+tf.disable_v2_behavior()
 import keras
 from keras.models import Model
 from keras.layers import Dense, Input, concatenate, Conv2D, GaussianNoise
@@ -30,7 +31,7 @@ CHECKPOINT="checkpoints/steg_model-{epoch:02d}-{val_loss:.2f}.hdf5"
 PRETRAINED='checkpoints/steg_model-04-0.03.hdf5'
 
 # Configure batch size
-BATCH_SIZE="12"
+BATCH_SIZE=12
 
 
 # Load test data as numpu arrays
@@ -292,9 +293,9 @@ callbacks_list = [checkpoint, tensorboard, image_summary, reduce_lr]
 
 # Train the model
 model.fit_generator(inputgenerator, epochs=100, 
-                          steps_per_epoch = TRAIN_NUM/BATCH_SIZE,
+                          steps_per_epoch = TRAIN_NUM//BATCH_SIZE,
                           validation_data=testgenerator, 
-                          validation_steps=VAL_NUM/BATCH_SIZE,
+                          validation_steps=VAL_NUM//BATCH_SIZE,
                           use_multiprocessing=True, 
                           callbacks=callbacks_list)
 
